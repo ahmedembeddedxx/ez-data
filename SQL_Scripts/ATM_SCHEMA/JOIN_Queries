@@ -1,0 +1,80 @@
+-- QUERY 1
+SELECT a.name, b.name
+FROM [User] AS a 
+JOIN [User] AS b
+ON a.city = b.city AND a.userId!=B.userId;
+
+-- QUERY 2
+SELECT COUNT(*)
+FROM [User]
+GROUP BY city
+ORDER BY COUNT(*) DESC;
+
+-- QUERY 3
+SELECT COUNT(*), cardNum 
+FROM [Transaction]
+GROUP BY cardNum
+HAVING COUNT(*)>2;
+
+-- QUERY 4
+SELECT name
+FROM [User] 
+WHERE name LIKE '___%';
+
+-- QUERY 5
+SELECT [User].[name] 
+FROM [User] 
+JOIN UserType
+ON [User].[userType] = UserType.userTypeID
+WHERE UserType.[name]='gold' AND [User].[name] LIKE 'H%z';
+
+-- QUERY 6
+SELECT name
+FROM [User] 
+WHERE name LIKE '%a%';
+
+
+-- QUERY 7
+SELECT U.name
+FROM [User] AS U
+JOIN UserCard AS UC
+ON U.userId=UC.userID
+JOIN [Card] AS C
+On UC.cardNum=C.cardNum
+WHERE C.expireDate>GETDATE();
+
+-- QUERY 8
+SELECT * 
+FROM [User]
+WHERE [User].[userType] IN
+(SELECT userTypeID
+FROM UserType
+WHERE name = 'Gold' or name = 'Common'); 
+
+-- QUERY 9
+SELECT *
+FROM [User]
+WHERE [User].userId
+NOT IN 
+	(
+	SELECT U.userId
+	FROM [User] AS U
+	LEFT JOIN [UserCard] AS UC
+	ON U.userId = UC.userID
+	LEFT JOIN [Card] AS C
+	ON C.cardNum = UC.cardNum
+	LEFT JOIN [Transaction] AS T
+	ON T.cardNum = UC.cardNum
+	WHERE UC.userID IS NOT NULL);
+
+-- QUERY 10
+SELECT U.*, UC.cardNum, T.amount
+FROM [User] AS U
+LEFT JOIN [UserCard] AS UC
+ON U.userId = UC.userID
+LEFT JOIN [Card] AS C
+ON C.cardNum = UC.cardNum
+LEFT JOIN [Transaction] AS T
+ON T.cardNum = UC.cardNum
+LEFT JOIN TransactionType AS TT
+ON TT.transTypeID = T.transType;
