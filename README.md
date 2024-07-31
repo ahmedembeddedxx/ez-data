@@ -2,7 +2,7 @@
 
 Welcome to the wild and eclectic world of **Everything but Data and AI** - where code meets creativity, and possibilities know no bounds!
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ahmedembeddedx/Everything_but_Data_Science/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ahmedembeddedxx/ez-data/blob/main/LICENSE)
 
 ## Table of Contents
 
@@ -34,7 +34,7 @@ Ready to embark on this thrilling coding adventure? Follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ahmedembeddedx/Everything_but_Data_Science.git
+   git clone https://github.com/ahmedembeddedxx/ez-data.git
    ```
 
 2. Explore the projects folder-wise or dive straight into the interactive demos. The choice is yours!
