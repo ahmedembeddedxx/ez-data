@@ -1,6 +1,6 @@
-# Everything but Data and AI
+# EZ DATA
 
-Welcome to the wild and eclectic world of **Everything but Data and AI** - where code meets creativity, and possibilities know no bounds!
+Welcome to the wild and eclectic world of **EZ DATA** - where code meets creativity, and possibilities know no bounds!
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/ahmedembeddedxx/ez-data/blob/main/LICENSE)
 
